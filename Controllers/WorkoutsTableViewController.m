@@ -10,6 +10,7 @@
 #import "Workout.h"
 #import "MHAPI.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <UIImageView+UIActivityIndicatorForSDWebImage.h>
 
 @interface WorkoutsTableViewController ()
 
@@ -47,16 +48,7 @@
     cell.textLabel.text = [workout title];
     cell.detailTextLabel.text = [workout with];
     
-    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    //this will start the image loading in bg
-    dispatch_async(concurrentQueue, ^{
-        NSData *image = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:workout.imageUrl]];
-        
-        //this will set the image when loading is finished
-        dispatch_async(dispatch_get_main_queue(), ^{
-            cell.imageView.image = [UIImage imageWithData:image];
-        });
-    });
+    [cell.imageView setImageWithURL:[NSURL URLWithString:workout.imageUrl] placeholderImage:[UIImage imageNamed:@"first"] options:0 usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
     return cell;
 }
