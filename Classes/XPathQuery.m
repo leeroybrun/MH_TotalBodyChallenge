@@ -195,6 +195,7 @@ NSArray *PerformHTMLXPathQuery(NSData *document, NSString *query)
     if (doc == NULL)
 	{
 		NSLog(@"Unable to parse.");
+        NSLog([[NSString alloc] initWithData:document encoding:NSUTF8StringEncoding]);
 		return nil;
     }
 	

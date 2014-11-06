@@ -4,36 +4,39 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Workouts Table View Controller-->
+        <!--Workouts-->
         <scene sceneID="oj1-rf-IY3">
             <objects>
                 <tableViewController id="4NN-2T-573" customClass="WorkoutsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Dh-1N-cUu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Dh-1N-cUu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutCell" textLabel="eub-3q-sSl" detailTextLabel="AaH-9U-PpG" style="IBUITableViewCellStyleSubtitle" id="eeR-Bi-4ZS">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="WorkoutCell" textLabel="eub-3q-sSl" detailTextLabel="AaH-9U-PpG" imageView="0uL-7Y-S1d" style="IBUITableViewCellStyleSubtitle" id="eeR-Bi-4ZS" customClass="WorkoutTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eeR-Bi-4ZS" id="RTg-XZ-YBe">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eub-3q-sSl">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AaH-9U-PpG">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="workout-placeholder" id="0uL-7Y-S1d">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ckd-Cq-qLo" kind="show" id="br8-3E-XPp"/>
+                                    <segue destination="ckd-Cq-qLo" kind="show" identifier="showWorkoutDetails" id="br8-3E-XPp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -42,25 +45,39 @@
                             <outlet property="delegate" destination="4NN-2T-573" id="i1G-1H-Tv6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7qQ-98-Gcl"/>
+                    <navigationItem key="navigationItem" title="Workouts" id="7qQ-98-Gcl"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHN-J9-qUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1442" y="-320"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Days Table View Controller-->
         <scene sceneID="Tcd-S2-HNf">
             <objects>
-                <tableViewController id="ckd-Cq-qLo" sceneMemberID="viewController">
+                <tableViewController id="ckd-Cq-qLo" customClass="DaysTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="B8g-ri-CRd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TGf-x7-leV">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayCell" textLabel="5kt-WC-eEc" detailTextLabel="wYq-Ej-src" style="IBUITableViewCellStyleSubtitle" id="TGf-x7-leV">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TGf-x7-leV" id="mZV-GW-A2C">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5kt-WC-eEc">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wYq-Ej-src">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -73,6 +90,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVk-aN-2zu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2124" y="-320"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uUT-GQ-ia5">
+            <objects>
+                <viewController id="2Mo-Dr-C9p" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eO9-6q-qoA"/>
+                        <viewControllerLayoutGuide type="bottom" id="6cy-HB-iTD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UcJ-uP-Sb9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yV2-nR-UE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2830" y="-320"/>
         </scene>
         <!--Nutrition-->
         <scene sceneID="wg7-f3-ORb">
@@ -137,7 +172,7 @@
         <scene sceneID="3WL-6s-oDa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r1w-Go-wIo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Workouts" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Workouts" image="barbell-tabbar" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qej-FD-ikc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -154,7 +189,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="barbell-tabbar" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
+        <image name="workout-placeholder" width="382" height="333"/>
     </resources>
 </document>

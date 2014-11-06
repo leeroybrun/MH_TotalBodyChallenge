@@ -8,17 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Workout : NSObject
+@interface Day : NSObject
 
+@property (nonatomic, copy) NSNumber *num;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *url;
-@property (nonatomic, copy) NSString *num;
-@property (nonatomic, copy) NSString *with;
 @property (nonatomic, copy) NSString *imageUrl;
-@property (nonatomic, strong) NSMutableArray *weeks;
-
-+(NSMutableArray*)getWorkouts;
-
--(NSMutableArray*)getWeeksAndDays;
 
 @end
