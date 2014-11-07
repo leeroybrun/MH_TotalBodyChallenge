@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Leeroy Brun. All rights reserved.
 //
 
-#import "WorkoutTableViewCell.h"
+#import "DayTableViewCell.h"
 
-@implementation WorkoutTableViewCell
+@implementation DayTableViewCell
 
 - (void)layoutSubviews {
     [super layoutSubviews];

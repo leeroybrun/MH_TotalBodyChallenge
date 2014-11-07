@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		08BC1BB6F7354F70DC7CDC2C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EF957279A774E111541178 /* libPods.a */; };
 		BE072EC51A0BC61600DBD539 /* WorkoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE072EC41A0BC61600DBD539 /* WorkoutTableViewCell.m */; };
+		BE1E7E3B1A0D797900333623 /* DayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1E7E3A1A0D797900333623 /* DayTableViewCell.m */; };
 		BE517C441A0AC4CD0083999F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE517C431A0AC4CD0083999F /* libxml2.dylib */; };
 		BEBC4FF21A0BD3A700DFFC50 /* DaysTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBC4FF11A0BD3A700DFFC50 /* DaysTableViewController.m */; };
 		BEBC4FFD1A0C062200DFFC50 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBC4FFA1A0C062200DFFC50 /* Day.m */; };
@@ -30,6 +31,8 @@
 		92EF957279A774E111541178 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE072EC31A0BC61600DBD539 /* WorkoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkoutTableViewCell.h; path = UI/WorkoutTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		BE072EC41A0BC61600DBD539 /* WorkoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkoutTableViewCell.m; path = UI/WorkoutTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		BE1E7E391A0D797900333623 /* DayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DayTableViewCell.h; path = UI/DayTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		BE1E7E3A1A0D797900333623 /* DayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DayTableViewCell.m; path = UI/DayTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		BE517C051A0AC4330083999F /* MH_TotalBodyChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MH_TotalBodyChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE517C431A0AC4CD0083999F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BEBC4FF01A0BD3A700DFFC50 /* DaysTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaysTableViewController.h; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 			children = (
 				BE072EC31A0BC61600DBD539 /* WorkoutTableViewCell.h */,
 				BE072EC41A0BC61600DBD539 /* WorkoutTableViewCell.m */,
+				BE1E7E391A0D797900333623 /* DayTableViewCell.h */,
+				BE1E7E3A1A0D797900333623 /* DayTableViewCell.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1E7E3B1A0D797900333623 /* DayTableViewCell.m in Sources */,
 				BEE01AD01A0AE1900092035F /* WorkoutsTableViewController.m in Sources */,
 				BEE01AD41A0AE1AB0092035F /* AppDelegate.m in Sources */,
 				BEBC4FFD1A0C062200DFFC50 /* Day.m in Sources */,

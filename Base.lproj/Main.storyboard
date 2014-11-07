@@ -55,12 +55,12 @@
         <scene sceneID="Tcd-S2-HNf">
             <objects>
                 <tableViewController id="ckd-Cq-qLo" customClass="DaysTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="B8g-ri-CRd">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="30" sectionFooterHeight="22" id="B8g-ri-CRd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayCell" textLabel="5kt-WC-eEc" detailTextLabel="wYq-Ej-src" style="IBUITableViewCellStyleSubtitle" id="TGf-x7-leV">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayCell" textLabel="5kt-WC-eEc" detailTextLabel="wYq-Ej-src" imageView="jM8-4T-c6Y" style="IBUITableViewCellStyleSubtitle" id="TGf-x7-leV">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TGf-x7-leV" id="mZV-GW-A2C">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -77,6 +77,9 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="barbell" id="jM8-4T-c6Y">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -189,6 +192,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="barbell" width="128" height="128"/>
         <image name="barbell-tabbar" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
         <image name="workout-placeholder" width="382" height="333"/>
