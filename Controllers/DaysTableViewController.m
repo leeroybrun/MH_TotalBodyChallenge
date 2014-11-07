@@ -8,7 +8,9 @@
 
 #import "DaysTableViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "Workout.h"
 #import "Week.h"
+#import "Day.h"
 
 @interface DaysTableViewController ()
 
@@ -50,12 +52,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayCell" forIndexPath:indexPath];
     
-    /*NSDictionary *day = [self.days objectAtIndex:indexPath.row];
+    Week *week = [self.workout.weeks objectAtIndex:indexPath.section];
+    Day *day = [week.days objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [day objectForKey:@"title"];
-    cell.detailTextLabel.text = [day objectForKey:@"dayNum"];
+    cell.textLabel.text = [day title];
+    cell.detailTextLabel.text = [day name];
     
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[day objectForKey:@"imageUrl"]] placeholderImage:[UIImage imageNamed:@"day-placeholder"]];*/
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[day imageUrl]] placeholderImage:[UIImage imageNamed:@"day-placeholder"]];
     
     return cell;
 }
