@@ -11,6 +11,7 @@
 		BE072EC51A0BC61600DBD539 /* WorkoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE072EC41A0BC61600DBD539 /* WorkoutTableViewCell.m */; };
 		BE1E7E3B1A0D797900333623 /* DayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1E7E3A1A0D797900333623 /* DayTableViewCell.m */; };
 		BE517C441A0AC4CD0083999F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE517C431A0AC4CD0083999F /* libxml2.dylib */; };
+		BE9DF3B31A0D90CA00CFFA53 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9DF3B21A0D90CA00CFFA53 /* Exercice.m */; };
 		BEBC4FF21A0BD3A700DFFC50 /* DaysTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBC4FF11A0BD3A700DFFC50 /* DaysTableViewController.m */; };
 		BEBC4FFD1A0C062200DFFC50 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBC4FFA1A0C062200DFFC50 /* Day.m */; };
 		BEBC4FFE1A0C062200DFFC50 /* Week.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBC4FFC1A0C062200DFFC50 /* Week.m */; };
@@ -35,6 +36,8 @@
 		BE1E7E3A1A0D797900333623 /* DayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DayTableViewCell.m; path = UI/DayTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		BE517C051A0AC4330083999F /* MH_TotalBodyChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MH_TotalBodyChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE517C431A0AC4CD0083999F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		BE9DF3B11A0D90CA00CFFA53 /* Exercice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercice.h; sourceTree = "<group>"; };
+		BE9DF3B21A0D90CA00CFFA53 /* Exercice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercice.m; sourceTree = "<group>"; };
 		BEBC4FF01A0BD3A700DFFC50 /* DaysTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaysTableViewController.h; sourceTree = "<group>"; };
 		BEBC4FF11A0BD3A700DFFC50 /* DaysTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaysTableViewController.m; sourceTree = "<group>"; };
 		BEBC4FF91A0C062200DFFC50 /* Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Day.h; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 		BEE01ACB1A0AE1900092035F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BE9DF3B11A0D90CA00CFFA53 /* Exercice.h */,
+				BE9DF3B21A0D90CA00CFFA53 /* Exercice.m */,
 				BEBC4FF91A0C062200DFFC50 /* Day.h */,
 				BEBC4FFA1A0C062200DFFC50 /* Day.m */,
 				BEBC4FFB1A0C062200DFFC50 /* Week.h */,
@@ -293,6 +298,7 @@
 				BEBC4FFE1A0C062200DFFC50 /* Week.m in Sources */,
 				BEBC4FF21A0BD3A700DFFC50 /* DaysTableViewController.m in Sources */,
 				BEE01AD61A0AE1D40092035F /* main.m in Sources */,
+				BE9DF3B31A0D90CA00CFFA53 /* Exercice.m in Sources */,
 				BE072EC51A0BC61600DBD539 /* WorkoutTableViewCell.m in Sources */,
 				BEE01AD11A0AE1900092035F /* Workout.m in Sources */,
 			);

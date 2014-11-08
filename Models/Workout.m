@@ -13,6 +13,16 @@
 
 @implementation Workout
 
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.weeks = [[NSMutableArray alloc] initWithCapacity:0];
+    }
+    return self;
+}
+
 +(NSMutableArray*)getWorkouts {
     // Get data from webpage
     NSURL *url = [NSURL URLWithString:@"http://totalbodychallenge.menshealth.co.uk/http://totalbodychallenge.menshealth.co.uk/the-challenges"];
@@ -78,6 +88,11 @@
 }
 
 -(NSMutableArray*)getWeeksAndDays {
+    // Already fetched ?
+    if([self.weeks count] > 0) {
+        return self.weeks;
+    }
+    
     // Get data from webpage
     NSURL *url = [NSURL URLWithString:self.url];
     NSData *htmlData = [NSData dataWithContentsOfURL:url];
@@ -85,25 +100,29 @@
     // Parse weeks nodes
     NSArray *weeksNodes = PerformHTMLXPathQuery(htmlData, @"//div[contains(@class,'calendarRow')]");
     
+    self.weeks = [[NSMutableArray alloc] initWithCapacity:0];
+    
     // Loop over each weeks
     for (NSDictionary *weekNode in weeksNodes) {
-        Week *week = [Week init];
+        Week *week = [[Week alloc] init];
         NSArray *node = [[NSArray alloc] init];
+        
+        week.days = [[NSMutableArray alloc] initWithCapacity:0];
         
         // Get node XML content and convert it to NSData
         NSData* weekNodeContent = [[weekNode objectForKey:@"nodeXMLContent"] dataUsingEncoding:NSUTF8StringEncoding];
         
         // Search for week number
-        node = PerformHTMLXPathQuery(weekNodeContent, @"//li[@class='week']");
+        node = PerformHTMLXPathQuery(weekNodeContent, @"//li[@class='week']/div");
         if([node count] > 0) {
             week.name = [[node objectAtIndex:0] objectForKey:@"nodeContent"];
             
             // Week days
-            NSArray *daysNodes = PerformHTMLXPathQuery(weekNodeContent, @"//li[@class='info']/div[contains(@class,'col')]");
+            NSArray *daysNodes = PerformHTMLXPathQuery(weekNodeContent, @"//li[@class='info']//li[contains(@class,'col')]");
             
-            NSNumber *dayI = [[NSNumber init] initWithInt:1];
+            NSNumber *dayI = [[NSNumber alloc] initWithInt:0];
             for (NSDictionary *dayNode in daysNodes) {
-                Day *day = [Day init];
+                Day *day = [[Day alloc] init];
                 
                 dayI = [NSNumber numberWithInt:[dayI intValue] + 1];
                 day.num = dayI;

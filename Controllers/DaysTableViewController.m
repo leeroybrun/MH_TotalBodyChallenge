@@ -8,6 +8,7 @@
 
 #import "DaysTableViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "DayTableViewCell.h"
 #import "Workout.h"
 #import "Week.h"
 #import "Day.h"
@@ -23,6 +24,10 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPageCurl target:self action:nil];
+    
+    NSLog(@"Entered view for %@", self.workout.title);
+    
+    self.navigationItem.title = self.workout.title;
     
     [self.workout getWeeksAndDays];
 }
@@ -50,7 +55,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayCell" forIndexPath:indexPath];
+    DayTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayCell" forIndexPath:indexPath];
     
     Week *week = [self.workout.weeks objectAtIndex:indexPath.section];
     Day *day = [week.days objectAtIndex:indexPath.row];
@@ -58,7 +63,7 @@
     cell.textLabel.text = [day title];
     cell.detailTextLabel.text = [day name];
     
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[day imageUrl]] placeholderImage:[UIImage imageNamed:@"day-placeholder"]];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[day imageUrl]] placeholderImage:[UIImage imageNamed:@"barbell"]];
     
     return cell;
 }

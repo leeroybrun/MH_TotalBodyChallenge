@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Day : NSObject
+@interface Exercice : NSObject
 
-@property (nonatomic, copy) NSNumber *num;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *description;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy) NSString *sets;
+@property (nonatomic, copy) NSString *reps;
+@property (nonatomic, copy) NSString *rest;
 @property (nonatomic, copy) NSString *imageUrl;
-@property (nonatomic, strong) NSMutableArray *exercices;
+@property (nonatomic, copy) NSString *videoUrl;
 
 @end
