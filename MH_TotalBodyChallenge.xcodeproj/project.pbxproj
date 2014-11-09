@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		08BC1BB6F7354F70DC7CDC2C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EF957279A774E111541178 /* libPods.a */; };
-		BE072EC51A0BC61600DBD539 /* WorkoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE072EC41A0BC61600DBD539 /* WorkoutTableViewCell.m */; };
-		BE1E7E3B1A0D797900333623 /* DayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1E7E3A1A0D797900333623 /* DayTableViewCell.m */; };
+		BE072EC51A0BC61600DBD539 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE072EC41A0BC61600DBD539 /* CustomTableViewCell.m */; };
+		BE3830031A0DAFD3007D780D /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3830021A0DAFD3007D780D /* VideoPlayerViewController.m */; };
+		BE38903C1A1009A7007B3727 /* ExerciceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE38903B1A1009A7007B3727 /* ExerciceViewController.m */; };
+		BE38903F1A100A41007B3727 /* ExercicesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE38903E1A100A41007B3727 /* ExercicesTableViewController.m */; };
 		BE517C441A0AC4CD0083999F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE517C431A0AC4CD0083999F /* libxml2.dylib */; };
 		BE9DF3B31A0D90CA00CFFA53 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9DF3B21A0D90CA00CFFA53 /* Exercice.m */; };
 		BEBC4FF21A0BD3A700DFFC50 /* DaysTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBC4FF11A0BD3A700DFFC50 /* DaysTableViewController.m */; };
@@ -30,10 +32,14 @@
 		0B2E27CFE18C6178BB9354CB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5F15C9B7FA4E34C0B75DB415 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		92EF957279A774E111541178 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE072EC31A0BC61600DBD539 /* WorkoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkoutTableViewCell.h; path = UI/WorkoutTableViewCell.h; sourceTree = SOURCE_ROOT; };
-		BE072EC41A0BC61600DBD539 /* WorkoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkoutTableViewCell.m; path = UI/WorkoutTableViewCell.m; sourceTree = SOURCE_ROOT; };
-		BE1E7E391A0D797900333623 /* DayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DayTableViewCell.h; path = UI/DayTableViewCell.h; sourceTree = SOURCE_ROOT; };
-		BE1E7E3A1A0D797900333623 /* DayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DayTableViewCell.m; path = UI/DayTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		BE072EC31A0BC61600DBD539 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTableViewCell.h; path = UI/CustomTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		BE072EC41A0BC61600DBD539 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTableViewCell.m; path = UI/CustomTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		BE3830011A0DAFD3007D780D /* VideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
+		BE3830021A0DAFD3007D780D /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
+		BE38903A1A1009A7007B3727 /* ExerciceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciceViewController.h; sourceTree = "<group>"; };
+		BE38903B1A1009A7007B3727 /* ExerciceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciceViewController.m; sourceTree = "<group>"; };
+		BE38903D1A100A41007B3727 /* ExercicesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExercicesTableViewController.h; sourceTree = "<group>"; };
+		BE38903E1A100A41007B3727 /* ExercicesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExercicesTableViewController.m; sourceTree = "<group>"; };
 		BE517C051A0AC4330083999F /* MH_TotalBodyChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MH_TotalBodyChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE517C431A0AC4CD0083999F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BE9DF3B11A0D90CA00CFFA53 /* Exercice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercice.h; sourceTree = "<group>"; };
@@ -77,10 +83,8 @@
 		BE072EC61A0BC61B00DBD539 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				BE072EC31A0BC61600DBD539 /* WorkoutTableViewCell.h */,
-				BE072EC41A0BC61600DBD539 /* WorkoutTableViewCell.m */,
-				BE1E7E391A0D797900333623 /* DayTableViewCell.h */,
-				BE1E7E3A1A0D797900333623 /* DayTableViewCell.m */,
+				BE072EC31A0BC61600DBD539 /* CustomTableViewCell.h */,
+				BE072EC41A0BC61600DBD539 /* CustomTableViewCell.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -148,6 +152,12 @@
 				BEE01ACA1A0AE1900092035F /* WorkoutsTableViewController.m */,
 				BEBC4FF01A0BD3A700DFFC50 /* DaysTableViewController.h */,
 				BEBC4FF11A0BD3A700DFFC50 /* DaysTableViewController.m */,
+				BE38903D1A100A41007B3727 /* ExercicesTableViewController.h */,
+				BE38903E1A100A41007B3727 /* ExercicesTableViewController.m */,
+				BE38903A1A1009A7007B3727 /* ExerciceViewController.h */,
+				BE38903B1A1009A7007B3727 /* ExerciceViewController.m */,
+				BE3830011A0DAFD3007D780D /* VideoPlayerViewController.h */,
+				BE3830021A0DAFD3007D780D /* VideoPlayerViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = SOURCE_ROOT;
@@ -290,16 +300,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE1E7E3B1A0D797900333623 /* DayTableViewCell.m in Sources */,
 				BEE01AD01A0AE1900092035F /* WorkoutsTableViewController.m in Sources */,
 				BEE01AD41A0AE1AB0092035F /* AppDelegate.m in Sources */,
 				BEBC4FFD1A0C062200DFFC50 /* Day.m in Sources */,
+				BE38903C1A1009A7007B3727 /* ExerciceViewController.m in Sources */,
 				BEE01ACF1A0AE1900092035F /* XPathQuery.m in Sources */,
 				BEBC4FFE1A0C062200DFFC50 /* Week.m in Sources */,
 				BEBC4FF21A0BD3A700DFFC50 /* DaysTableViewController.m in Sources */,
 				BEE01AD61A0AE1D40092035F /* main.m in Sources */,
+				BE38903F1A100A41007B3727 /* ExercicesTableViewController.m in Sources */,
 				BE9DF3B31A0D90CA00CFFA53 /* Exercice.m in Sources */,
-				BE072EC51A0BC61600DBD539 /* WorkoutTableViewCell.m in Sources */,
+				BE3830031A0DAFD3007D780D /* VideoPlayerViewController.m in Sources */,
+				BE072EC51A0BC61600DBD539 /* CustomTableViewCell.m in Sources */,
 				BEE01AD11A0AE1900092035F /* Workout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Leeroy Brun. All rights reserved.
 //
 
-#import "WorkoutTableViewCell.h"
+#import "CustomTableViewCell.h"
 
-@implementation WorkoutTableViewCell
+@implementation CustomTableViewCell
 
 - (void)layoutSubviews {
     [super layoutSubviews];

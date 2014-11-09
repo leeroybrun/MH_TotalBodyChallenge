@@ -6,23 +6,25 @@
 //  Copyright (c) 2014 Leeroy Brun. All rights reserved.
 //
 
-#import "WorkoutsTableViewController.h"
-#import "Workout.h"
+#import "ExercicesTableViewController.h"
+#import "Exercice.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "CustomTableViewCell.h"
-#import "DaysTableViewController.h"
+#import "ExerciceViewController.h"
 
-@interface WorkoutsTableViewController ()
+@interface ExercicesTableViewController ()
 
 
 @end
 
-@implementation WorkoutsTableViewController
+@implementation ExercicesTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.workouts = [Workout getWorkouts];
+    self.navigationItem.title = self.day.title;
+    
+    [self.day getDetail];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,28 +39,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.workouts count];
+    return [self.day.exercices count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WorkoutCell" forIndexPath:indexPath];
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExerciceCell" forIndexPath:indexPath];
     
-    Workout *workout = [self.workouts objectAtIndex:indexPath.row];
+    Exercice *exercice = [self.day.exercices objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [workout title];
-    cell.detailTextLabel.text = [workout with];
+    cell.textLabel.text = [exercice name];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ reps - %@ sets - %@ rest", [exercice reps], [exercice sets], [exercice rest]];
     
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:workout.imageUrl] placeholderImage:[UIImage imageNamed:@"workout-placeholder"]];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:exercice.imageUrl] placeholderImage:[UIImage imageNamed:@"barbell"]];
     
     return cell;
 }
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showWorkoutDetail"]) {
+    if ([segue.identifier isEqualToString:@"showExerciceDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        DaysTableViewController *destViewController = segue.destinationViewController;
-        destViewController.workout = [self.workouts objectAtIndex:indexPath.row];
+        ExerciceViewController *destViewController = segue.destinationViewController;
+        destViewController.exercice = [self.day.exercices objectAtIndex:indexPath.row];
     }
 }
 

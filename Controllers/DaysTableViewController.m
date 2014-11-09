@@ -7,8 +7,9 @@
 //
 
 #import "DaysTableViewController.h"
+#import "ExercicesTableViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "DayTableViewCell.h"
+#import "CustomTableViewCell.h"
 #import "Workout.h"
 #import "Week.h"
 #import "Day.h"
@@ -55,7 +56,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DayTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayCell" forIndexPath:indexPath];
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayCell" forIndexPath:indexPath];
     
     Week *week = [self.workout.weeks objectAtIndex:indexPath.section];
     Day *day = [week.days objectAtIndex:indexPath.row];
@@ -70,8 +71,13 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showDayDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        ExercicesTableViewController *destViewController = segue.destinationViewController;
+        
+        Week *week = [self.workout.weeks objectAtIndex:indexPath.section];
+        destViewController.day = [week.days objectAtIndex:indexPath.row];
+    }
 }
 
 @end

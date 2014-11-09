@@ -64,7 +64,7 @@
     NSData *htmlData = [NSData dataWithContentsOfURL:url];
     
     NSArray *node = PerformHTMLXPathQuery(htmlData, @"//div[@class='introCopy']/div[contains(@class,'col2')]/text()");
-    self.description = [[node objectAtIndex:0] objectForKey:@"nodeContent"];
+    self.desc = [[node objectAtIndex:0] objectForKey:@"nodeContent"];
     
     // Parse exercices nodes
     NSArray *exNodes = PerformHTMLXPathQuery(htmlData, @"//div[contains(@class,'workoutsRow')]");
@@ -84,7 +84,7 @@
             
             // Exercice description
             node = PerformHTMLXPathQuery(exNodeContent, @"//div[@class='colText']");
-            exercice.description = [[node objectAtIndex:0] objectForKey:@"nodeContent"];
+            exercice.desc = [[node objectAtIndex:0] objectForKey:@"nodeContent"];
             
             // Exercice sets, reps & rest
             node = PerformHTMLXPathQuery(exNodeContent, @"//div[@class='colRep']/ul/li/text()");
@@ -95,6 +95,10 @@
             // Exercice image
             node = PerformHTMLXPathQuery(exNodeContent, @"//img");
             exercice.imageUrl = [[[node objectAtIndex:0] objectForKey:@"nodeAttributeDictionary"] objectForKey:@"src"];
+            
+            // Exercice video ID
+            node = PerformHTMLXPathQuery(exNodeContent, @"//div[@class='video']");
+            exercice.videoId = [[[node objectAtIndex:0] objectForKey:@"nodeAttributeDictionary"] objectForKey:@"data-id"];
             
             [self.exercices addObject:exercice];
         }

@@ -11,11 +11,11 @@
 @interface Exercice : NSObject
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *description;
+@property (nonatomic, copy) NSString *desc;
 @property (nonatomic, copy) NSString *sets;
 @property (nonatomic, copy) NSString *reps;
 @property (nonatomic, copy) NSString *rest;
 @property (nonatomic, copy) NSString *imageUrl;
-@property (nonatomic, copy) NSString *videoUrl;
+@property (nonatomic, copy) NSString *videoId;
 
 @end

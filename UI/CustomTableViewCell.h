@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DayTableViewCell : UITableViewCell
+@interface CustomTableViewCell : UITableViewCell
 
 @end
