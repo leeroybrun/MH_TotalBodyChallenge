@@ -38,11 +38,11 @@
 }
 
 - (IBAction)playVideoBtnTouched:(id)sender {
-    VideoPlayerViewController *playerViewController = [[VideoPlayerViewController alloc] init];
+    self.playerViewController = [[VideoPlayerViewController alloc] init];
     
-    playerViewController.videoId = [self.exercice videoId];
+    self.playerViewController.videoId = [self.exercice videoId];
     
-    [self presentViewController:playerViewController animated:YES completion:^{}];
+    [self presentViewController:self.playerViewController animated:YES completion:^{}];
 }
 
 @end
