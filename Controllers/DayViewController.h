@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Day.h"
 
-@interface ExercicesTableViewController : UITableViewController
+@interface DayViewController : UITableViewController
 
 @property (strong, nonatomic) Day *day;
 

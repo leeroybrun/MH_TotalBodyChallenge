@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Workout.h"
+#import "Week.h"
 
-@interface DaysTableViewController : UITableViewController
+@interface WeekViewController : UITableViewController
 
-@property (strong, nonatomic) Workout *workout;
+@property (strong, nonatomic) Week *week;
 
 @end

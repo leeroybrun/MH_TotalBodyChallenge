@@ -1,23 +1,27 @@
 //
-//  Week
-//  TotalBodyChallenge
+//  Week.m
+//  MH_TotalBodyChallenge
 //
-//  Created by Leeroy Brun on 04.11.14.
+//  Created by Leeroy Brun on 28.12.14.
 //  Copyright (c) 2014 Leeroy Brun. All rights reserved.
 //
 
 #import "Week.h"
+#import "Day.h"
+#import "Workout.h"
+
 
 @implementation Week
 
-- (id)init
-{
-    self = [super init];
-    if (self)
-    {
-        self.days = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    return self;
+@dynamic name;
+@dynamic num;
+@dynamic days;
+@dynamic workout;
+
+- (void)addDaysObject:(Day *)value {
+    NSMutableOrderedSet* tempSet = [NSMutableOrderedSet orderedSetWithOrderedSet:self.days];
+    [tempSet addObject:value];
+    self.days = tempSet;
 }
 
 @end

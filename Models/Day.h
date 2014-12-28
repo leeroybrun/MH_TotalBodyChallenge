@@ -1,23 +1,39 @@
 //
-//  Workout.h
-//  TotalBodyChallenge
+//  Day.h
+//  MH_TotalBodyChallenge
 //
-//  Created by Leeroy Brun on 04.11.14.
+//  Created by Leeroy Brun on 28.12.14.
 //  Copyright (c) 2014 Leeroy Brun. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Day : NSObject
+@class Exercice, Week;
 
-@property (nonatomic, copy) NSNumber *num;
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *desc;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *url;
-@property (nonatomic, copy) NSString *imageUrl;
-@property (nonatomic, strong) NSMutableArray *exercices;
+@interface Day : NSManagedObject
 
--(void)getDetail;
+@property (nonatomic, retain) NSString * desc;
+@property (nonatomic, retain) NSString * imageUrl;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * num;
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * url;
+@property (nonatomic) BOOL detailsFetched;
+@property (nonatomic, retain) NSOrderedSet *exercices;
+@property (nonatomic, retain) Week *week;
+@end
 
+@interface Day (CoreDataGeneratedAccessors)
+
+- (void)insertObject:(Exercice *)value inExercicesAtIndex:(NSUInteger)idx;
+- (void)removeObjectFromExercicesAtIndex:(NSUInteger)idx;
+- (void)insertExercices:(NSArray *)value atIndexes:(NSIndexSet *)indexes;
+- (void)removeExercicesAtIndexes:(NSIndexSet *)indexes;
+- (void)replaceObjectInExercicesAtIndex:(NSUInteger)idx withObject:(Exercice *)value;
+- (void)replaceExercicesAtIndexes:(NSIndexSet *)indexes withExercices:(NSArray *)values;
+- (void)addExercicesObject:(Exercice *)value;
+- (void)removeExercicesObject:(Exercice *)value;
+- (void)addExercices:(NSOrderedSet *)values;
+- (void)removeExercices:(NSOrderedSet *)values;
 @end

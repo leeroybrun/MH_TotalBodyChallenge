@@ -1,21 +1,27 @@
 //
-//  Workout.h
-//  TotalBodyChallenge
+//  Exercice.h
+//  MH_TotalBodyChallenge
 //
-//  Created by Leeroy Brun on 04.11.14.
+//  Created by Leeroy Brun on 28.12.14.
 //  Copyright (c) 2014 Leeroy Brun. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Exercice : NSObject
+@class Day;
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *desc;
-@property (nonatomic, copy) NSString *sets;
-@property (nonatomic, copy) NSString *reps;
-@property (nonatomic, copy) NSString *rest;
-@property (nonatomic, copy) NSString *imageUrl;
-@property (nonatomic, copy) NSString *videoId;
+@interface Exercice : NSManagedObject
+
+@property (nonatomic, retain) NSString * additionalDesc;
+@property (nonatomic, retain) NSString * desc;
+@property (nonatomic, retain) NSString * imageUrl;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * nbReps;
+@property (nonatomic, retain) NSString * nbRest;
+@property (nonatomic, retain) NSString * nbSets;
+@property (nonatomic, retain) NSNumber * num;
+@property (nonatomic, retain) NSString * videoId;
+@property (nonatomic, retain) Day *day;
 
 @end

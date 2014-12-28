@@ -15,6 +15,12 @@
 @property (strong, nonatomic) Exercice *exercice;
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *exerciceName;
+@property (weak, nonatomic) IBOutlet UIButton *videoButton;
+@property (weak, nonatomic) IBOutlet UILabel *exerciceReps;
+@property (weak, nonatomic) IBOutlet UILabel *exerciceSets;
+@property (weak, nonatomic) IBOutlet UILabel *exerciceRest;
+@property (weak, nonatomic) IBOutlet UITextView *exerciceDesc;
 
 @property (strong, nonatomic) VideoPlayerViewController *playerViewController;
 

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WorkoutsTableViewController : UITableViewController
+@interface WorkoutsViewController : UITableViewController
 
 @property (strong, nonatomic) NSArray *workouts;
+
+- (IBAction)offlineSync:(UIBarButtonItem *)sender;
 
 @end

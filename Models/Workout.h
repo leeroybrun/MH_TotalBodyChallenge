@@ -1,24 +1,38 @@
 //
 //  Workout.h
-//  TotalBodyChallenge
+//  MH_TotalBodyChallenge
 //
-//  Created by Leeroy Brun on 04.11.14.
+//  Created by Leeroy Brun on 28.12.14.
 //  Copyright (c) 2014 Leeroy Brun. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Workout : NSObject
+@class Week;
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *url;
-@property (nonatomic, copy) NSString *num;
-@property (nonatomic, copy) NSString *with;
-@property (nonatomic, copy) NSString *imageUrl;
-@property (nonatomic, strong) NSMutableArray *weeks;
+@interface Workout : NSManagedObject
 
-+(NSMutableArray*)getWorkouts;
+@property (nonatomic, retain) NSString * desc;
+@property (nonatomic) BOOL detailsFetched;
+@property (nonatomic, retain) NSString * imageUrl;
+@property (nonatomic, retain) NSNumber * num;
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * url;
+@property (nonatomic, retain) NSString * with;
+@property (nonatomic, retain) NSOrderedSet *weeks;
+@end
 
--(NSMutableArray*)getWeeksAndDays;
+@interface Workout (CoreDataGeneratedAccessors)
 
+- (void)insertObject:(Week *)value inWeeksAtIndex:(NSUInteger)idx;
+- (void)removeObjectFromWeeksAtIndex:(NSUInteger)idx;
+- (void)insertWeeks:(NSArray *)value atIndexes:(NSIndexSet *)indexes;
+- (void)removeWeeksAtIndexes:(NSIndexSet *)indexes;
+- (void)replaceObjectInWeeksAtIndex:(NSUInteger)idx withObject:(Week *)value;
+- (void)replaceWeeksAtIndexes:(NSIndexSet *)indexes withWeeks:(NSArray *)values;
+- (void)addWeeksObject:(Week *)value;
+- (void)removeWeeksObject:(Week *)value;
+- (void)addWeeks:(NSOrderedSet *)values;
+- (void)removeWeeks:(NSOrderedSet *)values;
 @end

@@ -6,25 +6,27 @@
 //  Copyright (c) 2014 Leeroy Brun. All rights reserved.
 //
 
-#import "ExercicesTableViewController.h"
+#import "DayViewController.h"
 #import "Exercice.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "CustomTableViewCell.h"
 #import "ExerciceViewController.h"
 
-@interface ExercicesTableViewController ()
+@interface DayViewController ()
 
 
 @end
 
-@implementation ExercicesTableViewController
+@implementation DayViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationItem.title = self.day.title;
     
-    [self.day getDetail];
+    //[self.day getDetail];
+    
+    NSLog(@"Nb exercices: %d", (int)[self.day.exercices count]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,7 +50,7 @@
     Exercice *exercice = [self.day.exercices objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [exercice name];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ reps - %@ sets - %@ rest", [exercice reps], [exercice sets], [exercice rest]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ reps - %@ sets - %@ rest", [exercice nbReps], [exercice nbSets], [exercice nbRest]];
     
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:exercice.imageUrl] placeholderImage:[UIImage imageNamed:@"barbell"]];
     

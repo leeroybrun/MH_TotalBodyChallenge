@@ -6,23 +6,40 @@
 //  Copyright (c) 2014 Leeroy Brun. All rights reserved.
 //
 
-#import "WorkoutsTableViewController.h"
+#import "WorkoutsViewController.h"
+#import "DataHelper.h"
 #import "Workout.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "CustomTableViewCell.h"
-#import "DaysTableViewController.h"
+#import "WorkoutViewController.h"
 
-@interface WorkoutsTableViewController ()
+@interface WorkoutsViewController ()
 
 
 @end
 
-@implementation WorkoutsTableViewController
+@implementation WorkoutsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.workouts = [Workout getWorkouts];
+    DataHelper *data = [DataHelper sharedManager];
+    
+    self.workouts = [data getWorkouts];
+}
+
+- (IBAction)offlineSync:(UIBarButtonItem *)sender {
+    dispatch_queue_t myQueue = dispatch_queue_create("Fetch workout data",NULL);
+    dispatch_async(myQueue, ^{
+        NSLog(@"Starting to fetch workouts data...");
+        /*for (Workout *workout in self.workouts) {
+            [workout fetchData];
+        }*/
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"All workouts fetched !");
+        });
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +74,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showWorkoutDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        DaysTableViewController *destViewController = segue.destinationViewController;
+        WorkoutViewController *destViewController = segue.destinationViewController;
         destViewController.workout = [self.workouts objectAtIndex:indexPath.row];
     }
 }

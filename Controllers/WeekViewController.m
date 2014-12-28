@@ -6,31 +6,29 @@
 //  Copyright (c) 2014 Leeroy Brun. All rights reserved.
 //
 
-#import "DaysTableViewController.h"
-#import "ExercicesTableViewController.h"
+#import "WeekViewController.h"
+#import "DayViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "CustomTableViewCell.h"
 #import "Workout.h"
 #import "Week.h"
 #import "Day.h"
 
-@interface DaysTableViewController ()
+@interface WeekViewController ()
 
 
 @end
 
-@implementation DaysTableViewController
+@implementation WeekViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPageCurl target:self action:nil];
     
-    NSLog(@"Entered view for %@", self.workout.title);
+    NSLog(@"Entered view for %@", self.week.name);
     
-    self.navigationItem.title = self.workout.title;
-    
-    [self.workout getWeeksAndDays];
+    self.navigationItem.title = self.week.name;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,29 +38,21 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return [self.workout.weeks count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    Week *week = [self.workout.weeks objectAtIndex:section];
-    return [[week days] count];
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    Week *week = [self.workout.weeks objectAtIndex:section];
-    return [week name];
+    return [[self.week days] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayCell" forIndexPath:indexPath];
     
-    Week *week = [self.workout.weeks objectAtIndex:indexPath.section];
-    Day *day = [week.days objectAtIndex:indexPath.row];
+    Day *day = [self.week.days objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [day title];
-    cell.detailTextLabel.text = [day name];
+    cell.textLabel.text = [day name];
+    cell.detailTextLabel.text = [day title];
     
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[day imageUrl]] placeholderImage:[UIImage imageNamed:@"barbell"]];
     
@@ -73,10 +63,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showDayDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        ExercicesTableViewController *destViewController = segue.destinationViewController;
+        DayViewController *destViewController = segue.destinationViewController;
         
-        Week *week = [self.workout.weeks objectAtIndex:indexPath.section];
-        destViewController.day = [week.days objectAtIndex:indexPath.row];
+        destViewController.day = [self.week.days objectAtIndex:indexPath.row];
     }
 }
 

@@ -22,6 +22,15 @@
     self.navigationItem.title = self.exercice.name;
     
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.exercice.imageUrl] placeholderImage:[UIImage imageNamed:@"barbell"]];
+    self.exerciceName.text = self.exercice.name;
+    self.exerciceDesc.text = self.exercice.desc;
+    self.exerciceReps.text = self.exercice.nbReps;
+    self.exerciceSets.text = self.exercice.nbSets;
+    self.exerciceRest.text = self.exercice.nbRest;
+    
+    if(self.exercice.videoId) {
+        [self.videoButton setEnabled:true];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,11 +47,13 @@
 }
 
 - (IBAction)playVideoBtnTouched:(id)sender {
-    self.playerViewController = [[VideoPlayerViewController alloc] init];
-    
-    self.playerViewController.videoId = [self.exercice videoId];
-    
-    [self presentViewController:self.playerViewController animated:YES completion:^{}];
+    if(self.exercice.videoId) {
+        self.playerViewController = [[VideoPlayerViewController alloc] init];
+        
+        self.playerViewController.videoId = [self.exercice videoId];
+        
+        [self presentViewController:self.playerViewController animated:YES completion:^{}];
+    }
 }
 
 @end
