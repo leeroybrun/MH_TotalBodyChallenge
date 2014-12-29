@@ -7,9 +7,11 @@
 //
 
 #import "WorkoutsViewController.h"
+#import "DownloadStatusViewController.h"
 #import "DataHelper.h"
 #import "Workout.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <MZFormSheetController.h>
 #import "CustomTableViewCell.h"
 #import "WorkoutViewController.h"
 
@@ -29,17 +31,21 @@
 }
 
 - (IBAction)offlineSync:(UIBarButtonItem *)sender {
-    dispatch_queue_t myQueue = dispatch_queue_create("Fetch workout data",NULL);
-    dispatch_async(myQueue, ^{
-        NSLog(@"Starting to fetch workouts data...");
-        /*for (Workout *workout in self.workouts) {
-            [workout fetchData];
-        }*/
+    DownloadStatusViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"dlStatusController"];
+    
+    MZFormSheetController *formSheet = [[MZFormSheetController alloc] initWithViewController:vc];
+    formSheet.shouldDismissOnBackgroundViewTap = YES;
+    formSheet.shouldCenterVertically = YES;
+    formSheet.transitionStyle = MZFormSheetTransitionStyleSlideFromTop;
+    formSheet.cornerRadius = 6.0;
+    
+    [[MZFormSheetController sharedBackgroundWindow] setBackgroundBlurEffect:YES];
+    [[MZFormSheetController sharedBackgroundWindow] setBlurRadius:4.0];
+    
+    // present form sheet with view controller
+    [self mz_presentFormSheetController:formSheet animated:YES completionHandler:^(MZFormSheetController *formSheetController) {
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"All workouts fetched !");
-        });
-    });
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

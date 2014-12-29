@@ -32,6 +32,7 @@
 		BEE01ADC1A0AE20E0092035F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE01AD91A0AE20E0092035F /* Main.storyboard */; };
 		BEE01ADE1A0AE2180092035F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEE01ADD1A0AE2180092035F /* Images.xcassets */; };
 		BEE01AE01A0AE2380092035F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEE01ADF1A0AE2380092035F /* Info.plist */; };
+		BEE346F61A50DDAF0070EB83 /* DownloadStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE346F51A50DDAF0070EB83 /* DownloadStatusViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,8 @@
 		BEE01ADF1A0AE2380092035F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		BEE0F4041A0ADE9600C79A00 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BEE0F4061A0ADEFF00C79A00 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		BEE346F41A50DDAF0070EB83 /* DownloadStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadStatusViewController.h; sourceTree = "<group>"; };
+		BEE346F51A50DDAF0070EB83 /* DownloadStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadStatusViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,8 @@
 				BE3830021A0DAFD3007D780D /* VideoPlayerViewController.m */,
 				BEBB96411A3F4C7500E0DAE3 /* WorkoutViewController.h */,
 				BEBB96421A3F4C7500E0DAE3 /* WorkoutViewController.m */,
+				BEE346F41A50DDAF0070EB83 /* DownloadStatusViewController.h */,
+				BEE346F51A50DDAF0070EB83 /* DownloadStatusViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = SOURCE_ROOT;
@@ -330,6 +335,7 @@
 				BEBB96431A3F4C7500E0DAE3 /* WorkoutViewController.m in Sources */,
 				BEE01AD41A0AE1AB0092035F /* AppDelegate.m in Sources */,
 				BE7A079C1A474E49003A0DD5 /* README.md in Sources */,
+				BEE346F61A50DDAF0070EB83 /* DownloadStatusViewController.m in Sources */,
 				BE7A079A1A47438C003A0DD5 /* MHAPI.m in Sources */,
 				BE38903C1A1009A7007B3727 /* ExerciceViewController.m in Sources */,
 				BEE01ACF1A0AE1900092035F /* XPathQuery.m in Sources */,
