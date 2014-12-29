@@ -23,5 +23,6 @@
 
 -(NSMutableArray*)getWorkouts;
 -(Workout*)getWorkoutDetails:(Workout *)workout;
+-(Day*)getDayDetails:(Day *)day;
 
 @end

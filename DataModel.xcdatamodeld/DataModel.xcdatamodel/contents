@@ -7,7 +7,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="num" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" attributeType="String" syncable="YES"/>
         <relationship name="exercices" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Exercice" inverseName="day" inverseEntity="Exercice" syncable="YES"/>
         <relationship name="week" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Week" inverseName="days" inverseEntity="Week" syncable="YES"/>
     </entity>
@@ -35,14 +35,14 @@
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="num" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" attributeType="String" syncable="YES"/>
         <attribute name="with" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="weeks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Week" inverseName="workout" inverseEntity="Week" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Day" positionX="-180" positionY="80" width="128" height="178"/>
+        <element name="Day" positionX="-180" positionY="80" width="128" height="180"/>
         <element name="Exercice" positionX="9" positionY="225" width="128" height="193"/>
         <element name="Week" positionX="-2" positionY="-18" width="128" height="103"/>
-        <element name="Workout" positionX="-162" positionY="-189" width="128" height="163"/>
+        <element name="Workout" positionX="-162" positionY="-189" width="128" height="165"/>
     </elements>
 </model>

@@ -119,7 +119,7 @@
         // Search for week name
         node = PerformHTMLXPathQuery(weekNodeContent, @"//li[@class='week']/div");
         if([node count] > 0) {
-            weekName = [[node objectAtIndex:0] objectForKey:@"nodeContent"];
+            weekName = [[[node objectAtIndex:0] objectForKey:@"nodeContent"] capitalizedString];
             
             // Week days
             NSArray *daysNodes = PerformHTMLXPathQuery(weekNodeContent, @"//li[@class='info']//li[contains(@class,'col')]");
@@ -129,8 +129,38 @@
                 NSString *dayUrl = @"";
                 NSString *dayImageUrl = @"";
                 NSString *dayTitle = @"";
+                NSString *dayName = @"";
 
                 dayNum++;
+                
+                // We set the say name from day num
+                switch (dayNum) {
+                    case 1:
+                        dayName = @"Monday";
+                        break;
+                    case 2:
+                        dayName = @"Tuesday";
+                        break;
+                    case 3:
+                        dayName = @"Wednesday";
+                        break;
+                    case 4:
+                        dayName = @"Thursday";
+                        break;
+                    case 5:
+                        dayName = @"Friday";
+                        break;
+                    case 6:
+                        dayName = @"Saturday";
+                        break;
+                    case 7:
+                        dayName = @"Sunday";
+                        break;
+                        
+                    default:
+                        dayName = @"";
+                        break;
+                }
                 
                 // Get node XML content and convert it to NSData
                 NSData* dayNodeContent = [[dayNode objectForKey:@"nodeXMLContent"] dataUsingEncoding:NSUTF8StringEncoding];
@@ -156,8 +186,9 @@
                 
                 [day setObject:@(dayNum) forKey:@"num"];
                 [day setObject:dayUrl forKey:@"url"];
-                [day setObject:dayImageUrl forKey:@"imageUrl"];
+                [day setObject:dayName forKey:@"name"];
                 [day setObject:dayTitle forKey:@"title"];
+                [day setObject:dayImageUrl forKey:@"imageUrl"];
                 
                 [weekDays addObject:day];
             }

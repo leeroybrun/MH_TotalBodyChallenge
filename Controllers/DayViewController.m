@@ -7,6 +7,7 @@
 //
 
 #import "DayViewController.h"
+#import "DataHelper.h"
 #import "Exercice.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "CustomTableViewCell.h"
@@ -24,7 +25,9 @@
     
     self.navigationItem.title = self.day.title;
     
-    //[self.day getDetail];
+    DataHelper *data = [DataHelper sharedManager];
+    
+    self.day = [data getDayDetails:self.day];
     
     NSLog(@"Nb exercices: %d", (int)[self.day.exercices count]);
 }
