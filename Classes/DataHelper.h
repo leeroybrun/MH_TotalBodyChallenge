@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/SDWebImagePrefetcher.h>
 #import "MHAPI.h"
 
 #import "Workout.h"
@@ -24,5 +26,6 @@
 -(NSMutableArray*)getWorkouts;
 -(Workout*)getWorkoutDetails:(Workout *)workout;
 -(Day*)getDayDetails:(Day *)day;
+-(void)downloadAllContent;
 
 @end

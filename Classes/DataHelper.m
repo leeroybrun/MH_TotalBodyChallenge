@@ -183,4 +183,33 @@
     return day;
 }
 
+
+-(void)downloadAllContent {
+    NSMutableArray *imageUrls = [NSMutableArray array];
+    
+    NSMutableArray *workouts = [self getWorkouts];
+    for(Workout *eWorkout in workouts) {
+        Workout *workout = [self getWorkoutDetails:eWorkout];
+        
+        [imageUrls addObject:[NSURL URLWithString:[workout imageUrl]]];
+        
+        for(Week *week in workout.weeks) {
+            for(Day *eDay in week.days) {
+                Day *day = [self getDayDetails:eDay];
+                
+                [imageUrls addObject:[NSURL URLWithString:[day imageUrl]]];
+                
+                for(Exercice *exercice in day.exercices) {
+                    [imageUrls addObject:[NSURL URLWithString:[exercice imageUrl]]];
+                }
+            }
+        }
+    }
+    
+    // Prefetch all images
+    [[SDWebImagePrefetcher sharedImagePrefetcher] prefetchURLs:imageUrls];
+    
+    // Prefetch all videos
+}
+
 @end
