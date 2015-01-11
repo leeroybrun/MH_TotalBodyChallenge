@@ -210,6 +210,9 @@
     [[SDWebImagePrefetcher sharedImagePrefetcher] prefetchURLs:imageUrls];
     
     // Prefetch all videos
+    // http://stackoverflow.com/a/18357918/1160800
+    // http://www.hpique.com/2014/03/how-to-cache-server-responses-in-ios-apps/
+    // http://nshipster.com/nsurlcache/
 }
 
 @end
