@@ -7,6 +7,7 @@ Videos are also available and downloaded for offline viewing.
 
 ## TODO
 
+- Scrape HTML : https://github.com/mattt/Ono
 - Better UITableViewController : https://github.com/mamaral/Organic
 - Fetch workout details
 - New tab : sync -> let the user start a sync and view resuls (x workouts/x, x days/x, etc... updated in real time)
