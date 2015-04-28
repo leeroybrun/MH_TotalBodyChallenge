@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08BC1BB6F7354F70DC7CDC2C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EF957279A774E111541178 /* libPods.a */; };
+		5ADF6531FABEF20896D219A6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EF957279A774E111541178 /* libPods.a */; };
 		BE072EC51A0BC61600DBD539 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE072EC41A0BC61600DBD539 /* CustomTableViewCell.m */; };
 		BE22EF8F1A5064B600A63779 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = BE22EF8E1A5064B600A63779 /* Exercice.m */; };
 		BE22EF921A5064F900A63779 /* Week.m in Sources */ = {isa = PBXBuildFile; fileRef = BE22EF911A5064F900A63779 /* Week.m */; };
 		BE22EF951A50651400A63779 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = BE22EF941A50651400A63779 /* Workout.m */; };
+		BE25AFFF1AF0246800753070 /* NSString+Hashes.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25AFFE1AF0246800753070 /* NSString+Hashes.m */; };
 		BE3830031A0DAFD3007D780D /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3830021A0DAFD3007D780D /* VideoPlayerViewController.m */; };
 		BE38903C1A1009A7007B3727 /* ExerciceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE38903B1A1009A7007B3727 /* ExerciceViewController.m */; };
 		BE38903F1A100A41007B3727 /* DayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE38903E1A100A41007B3727 /* DayViewController.m */; };
@@ -47,8 +48,10 @@
 		BE22EF911A5064F900A63779 /* Week.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Week.m; path = Models/Week.m; sourceTree = "<group>"; };
 		BE22EF931A50651400A63779 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Workout.h; path = Models/Workout.h; sourceTree = "<group>"; };
 		BE22EF941A50651400A63779 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Workout.m; path = Models/Workout.m; sourceTree = "<group>"; };
+		BE25AFFD1AF0243000753070 /* NSString+Hashes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Hashes.h"; sourceTree = "<group>"; };
+		BE25AFFE1AF0246800753070 /* NSString+Hashes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hashes.m"; sourceTree = "<group>"; };
 		BE3830011A0DAFD3007D780D /* VideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
-		BE3830021A0DAFD3007D780D /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
+		BE3830021A0DAFD3007D780D /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoPlayerViewController.m; path = "/Users/leeroybrun/Google Drive/Projects/iOS/MH_TotalBodyChallenge/Controllers/VideoPlayerViewController.m"; sourceTree = "<absolute>"; };
 		BE38903A1A1009A7007B3727 /* ExerciceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciceViewController.h; sourceTree = "<group>"; };
 		BE38903B1A1009A7007B3727 /* ExerciceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciceViewController.m; sourceTree = "<group>"; };
 		BE38903D1A100A41007B3727 /* DayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayViewController.h; sourceTree = "<group>"; };
@@ -56,7 +59,7 @@
 		BE517C051A0AC4330083999F /* MH_TotalBodyChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MH_TotalBodyChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE517C431A0AC4CD0083999F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BE6942CB1A50294200C69118 /* DataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHelper.h; sourceTree = "<group>"; };
-		BE6942CC1A50294200C69118 /* DataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHelper.m; sourceTree = "<group>"; };
+		BE6942CC1A50294200C69118 /* DataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataHelper.m; path = "/Users/leeroybrun/Google Drive/Projects/iOS/MH_TotalBodyChallenge/Classes/DataHelper.m"; sourceTree = "<absolute>"; };
 		BE6943181A50626200C69118 /* Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Day.h; path = Models/Day.h; sourceTree = "<group>"; };
 		BE6943191A50626200C69118 /* Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Day.m; path = Models/Day.m; sourceTree = "<group>"; };
 		BE7A07111A46FC71003A0DD5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -92,7 +95,7 @@
 			files = (
 				BE7A07121A46FC71003A0DD5 /* CoreData.framework in Frameworks */,
 				BE517C441A0AC4CD0083999F /* libxml2.dylib in Frameworks */,
-				08BC1BB6F7354F70DC7CDC2C /* libPods.a in Frameworks */,
+				5ADF6531FABEF20896D219A6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +184,8 @@
 				BE7A07991A47438C003A0DD5 /* MHAPI.m */,
 				BE6942CB1A50294200C69118 /* DataHelper.h */,
 				BE6942CC1A50294200C69118 /* DataHelper.m */,
+				BE25AFFD1AF0243000753070 /* NSString+Hashes.h */,
+				BE25AFFE1AF0246800753070 /* NSString+Hashes.m */,
 			);
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
@@ -334,6 +339,7 @@
 				BEE01AD01A0AE1900092035F /* WorkoutsViewController.m in Sources */,
 				BEBB96431A3F4C7500E0DAE3 /* WorkoutViewController.m in Sources */,
 				BEE01AD41A0AE1AB0092035F /* AppDelegate.m in Sources */,
+				BE25AFFF1AF0246800753070 /* NSString+Hashes.m in Sources */,
 				BE7A079C1A474E49003A0DD5 /* README.md in Sources */,
 				BEE346F61A50DDAF0070EB83 /* DownloadStatusViewController.m in Sources */,
 				BE7A079A1A47438C003A0DD5 /* MHAPI.m in Sources */,

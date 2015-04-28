@@ -42,15 +42,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showVideoPlayer"]) {
         VideoPlayerViewController *destViewController = segue.destinationViewController;
-        destViewController.videoId = [self.exercice videoId];
+        destViewController.videoUrl = [self.exercice videoUrl];
     }
 }
 
 - (IBAction)playVideoBtnTouched:(id)sender {
-    if(self.exercice.videoId) {
+    if(self.exercice.videoUrl) {
         self.playerViewController = [[VideoPlayerViewController alloc] init];
         
-        self.playerViewController.videoId = [self.exercice videoId];
+        self.playerViewController.videoUrl = [self.exercice videoUrl];
         
         [self presentViewController:self.playerViewController animated:YES completion:^{}];
     }

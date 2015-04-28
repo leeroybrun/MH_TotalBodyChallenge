@@ -12,9 +12,9 @@
 
 @interface VideoPlayerViewController : AVPlayerViewController
 
-@property (copy, nonatomic) NSString *videoId;
 @property (copy, nonatomic) NSString *videoUrl;
 
+-(void)setVideoUrl:(NSString *)videoUrl;
 -(void)playVideo;
 
 @end

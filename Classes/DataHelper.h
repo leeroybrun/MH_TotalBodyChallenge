@@ -27,5 +27,7 @@
 -(Workout*)getWorkoutDetails:(Workout *)workout;
 -(Day*)getDayDetails:(Day *)day;
 -(void)downloadAllContent;
+-(NSURL *)applicationDocumentsDirectory;
+-(NSURL*)downloadVideo:(NSString *)videoUrl;
 
 @end

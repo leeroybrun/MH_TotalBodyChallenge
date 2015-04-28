@@ -22,6 +22,9 @@
 @property (nonatomic, retain) NSString * nbSets;
 @property (nonatomic, retain) NSNumber * num;
 @property (nonatomic, retain) NSString * videoId;
+@property (nonatomic, retain) NSString * videoUrl;
 @property (nonatomic, retain) Day *day;
+
+-(void)fetchVideoUrl;
 
 @end

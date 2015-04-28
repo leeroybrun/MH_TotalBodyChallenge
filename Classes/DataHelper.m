@@ -7,6 +7,8 @@
 //
 
 #import "DataHelper.h"
+#import "NSString+Hashes.h"
+#import <AFNetworking/AFHTTPRequestOperation.h>
 
 @implementation DataHelper
 
@@ -163,6 +165,9 @@
             exercice.nbRest = [exDict objectForKey:@"nbRest"];
             exercice.imageUrl = [exDict objectForKey:@"imageUrl"];
             exercice.videoId = [exDict objectForKey:@"videoId"];
+            exercice.videoUrl = @"";
+            
+            [exercice fetchVideoUrl];
             
             [exercice setDay:day];
             [day addExercicesObject:exercice];
@@ -183,9 +188,50 @@
     return day;
 }
 
+- (NSURL *)applicationDocumentsDirectory {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
+                                                   inDomains:NSUserDomainMask] lastObject];
+}
+
+-(NSURL*)downloadVideo:(NSString *)videoUrl {
+    NSURL *url = [NSURL URLWithString:videoUrl];
+    
+    NSString *filename = [videoUrl sha1];
+    
+    NSString *path = [[self applicationDocumentsDirectory].path
+                      stringByAppendingPathComponent:filename];
+    
+    NSLog(@"Video cache path: %@", path);
+    
+    if([[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        NSLog(@"Video exists in local cache");
+        return [NSURL fileURLWithPath:path];
+    }
+    else
+    {
+        NSLog(@"Video does not exists in local cache");
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        
+        operation.outputStream = [NSOutputStream outputStreamToFileAtPath:path append:NO];
+        
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"Successfully downloaded file to %@", path);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+        
+        [operation start];
+        
+        return url;
+    }
+}
 
 -(void)downloadAllContent {
     NSMutableArray *imageUrls = [NSMutableArray array];
+    NSMutableArray *videosUrls = [NSMutableArray array];
     
     NSMutableArray *workouts = [self getWorkouts];
     for(Workout *eWorkout in workouts) {
@@ -201,6 +247,7 @@
                 
                 for(Exercice *exercice in day.exercices) {
                     [imageUrls addObject:[NSURL URLWithString:[exercice imageUrl]]];
+                    [videosUrls addObject:[exercice videoUrl]];
                 }
             }
         }
@@ -210,9 +257,9 @@
     [[SDWebImagePrefetcher sharedImagePrefetcher] prefetchURLs:imageUrls];
     
     // Prefetch all videos
-    // http://stackoverflow.com/a/18357918/1160800
-    // http://www.hpique.com/2014/03/how-to-cache-server-responses-in-ios-apps/
-    // http://nshipster.com/nsurlcache/
+    for(NSString *videoUrl in videosUrls) {
+        [self downloadVideo:videoUrl];
+    }
 }
 
 @end
