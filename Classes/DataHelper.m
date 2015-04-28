@@ -198,7 +198,7 @@
     
     NSString *filename = [videoUrl sha1];
     
-    NSString *path = [[self applicationDocumentsDirectory].path
+    NSString *path = [[[self applicationDocumentsDirectory].path stringByAppendingPathComponent:@"videos"]
                       stringByAppendingPathComponent:filename];
     
     NSLog(@"Video cache path: %@", path);
