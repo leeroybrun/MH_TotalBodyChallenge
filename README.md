@@ -7,8 +7,8 @@ Videos are also available and downloaded for offline viewing.
 
 ## TODO
 
-- Use Core Data to store informations
-- Migrate MH fetching to MHAPI class
+- Scrape HTML : https://github.com/mattt/Ono
+- Better UITableViewController : https://github.com/mamaral/Organic
 - Fetch workout details
 - New tab : sync -> let the user start a sync and view resuls (x workouts/x, x days/x, etc... updated in real time)
 
